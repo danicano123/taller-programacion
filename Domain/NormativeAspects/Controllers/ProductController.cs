@@ -1,9 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace programming_work_backend.Domain.NormativeAspects.Controllers;
+namespace programming_work_backend.Domain.Product.Controllers;
 
 [ApiController]
-[Route("api/v1/normative-aspects")]
+[Route("api/v1/prodcut")]
 public class ProductController : ControllerBase
 {
 
