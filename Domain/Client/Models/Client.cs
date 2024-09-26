@@ -1,4 +1,4 @@
-namespace programming_work_backend.Domain.Credit.Models;
+namespace programming_work_backend.Domain.Client.Models;
 
 public class Client
 {
