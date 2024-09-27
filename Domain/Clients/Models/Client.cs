@@ -5,6 +5,6 @@ namespace taller_programacion.Domain.Clients.Models;
 
 public class Client: Person
 {
-    public double Credit { get; set; }
+    public double Credit { get; set; } 
 
 }
