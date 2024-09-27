@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Cors;
 using Microsoft.EntityFrameworkCore;
-using programming_work_backend.Data;
+using taller_programacion.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,10 +22,16 @@ builder.Services.AddCors(options =>
 // Db connection
 builder.Services.AddDbContext<DBContext>(options =>
 {
-    options.UseMySql(builder.Configuration.GetConnectionString("programming-work-db"),
+    options.UseMySql(builder.Configuration.GetConnectionString("taller-programacion-db"),
     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.2-Mysql"));
 });
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    DBContext dbContext = scope.ServiceProvider.GetRequiredService<DBContext>();
+    dbContext.Database.Migrate();  // Este comando aplica las migraciones pendientes
+}
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

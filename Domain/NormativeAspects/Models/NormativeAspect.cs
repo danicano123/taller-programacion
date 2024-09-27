@@ -1,10 +1,13 @@
-namespace programming_work_backend.Domain.NormativeAspects.Models;
+using System.ComponentModel.DataAnnotations;
+
+namespace taller_programacion.Domain.NormativeAspects.Models;
 
 public class NormativeAspect
 {
-
-    public string Type { get; set; }
-    public string Description { get; set; }
-    public string Source { get; set; }
+    [Key]
+    public int Id { get; set; }
+    public string Type { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+    public string Source { get; set; } = string.Empty;
 
 }
